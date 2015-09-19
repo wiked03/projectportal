@@ -100,30 +100,30 @@ if( preg_match( '/\/ta-([\d\.]+)($|\/)/', $var_string, $matches ) )
 }
 // --------------------
 // (in) industry
-if( preg_match( '/\/in-([\d\.]+)($|\/)/', $var_string, $matches ) )
-{
-  // make sure valid
-  $vals = explode( '.', $matches[1] );
-  $q_str = NULL;
-  $s_str = '';
-
-  foreach( $vals as $value )
-  {
-    if( isset( $LANG['industries'][$value] ) )
-    {
-      $s_str[] = '"<span class="search_param">'.$LANG['industries'][$value].'</span>"';
-      $q_str[] = $value;
-    }
-  }
-
-  if( $q_str )
-  {
-    $where[] = "p.industry REGEXP '(\\^|\\.)(".implode( '|', $q_str ).")($|\\.)'";
-    $search_data['industry'] = implode( '.', $q_str );
-    $search_string[] = '<span class="label">Industry</span> is '.implode( ' or ', $s_str );
-  }
-
-}
+//if( preg_match( '/\/in-([\d\.]+)($|\/)/', $var_string, $matches ) )
+//{
+//  // make sure valid
+//  $vals = explode( '.', $matches[1] );
+//  $q_str = NULL;
+//  $s_str = '';
+//
+//  foreach( $vals as $value )
+//  {
+//    if( isset( $LANG['industries'][$value] ) )
+//    {
+//      $s_str[] = '"<span class="search_param">'.$LANG['industries'][$value].'</span>"';
+//      $q_str[] = $value;
+//    }
+//  }
+//
+//  if( $q_str )
+//  {
+//    $where[] = "p.industry REGEXP '(\\^|\\.)(".implode( '|', $q_str ).")($|\\.)'";
+//    $search_data['industry'] = implode( '.', $q_str );
+//    $search_string[] = '<span class="label">Industry</span> is '.implode( ' or ', $s_str );
+//  }
+//
+//}
 // --------------------
 // (poc) point of contact
 if( preg_match( '/\/poc-([^\/]+)/', $var_string, $matches ) )
@@ -233,7 +233,7 @@ if( preg_match( '/\/dir-([\d\.]+)($|\/)/', $var_string, $matches ) )
 	{
 		$where[] = "p.fk_dir_id IN (".implode( ',', $q_str ).") ";
 		$search_data['project_directors_list'] = implode( '.', $q_str );
-		$search_string[] = '<span class="label">Director</span> is '.implode( ' or ', $s_str );
+		$search_string[] = '<span class="label">Project Manager</span> is '.implode( ' or ', $s_str );
 	}
 }
 // --------------------
@@ -259,7 +259,7 @@ if( preg_match( '/\/pid-([\d\.]+)($|\/)/', $var_string, $matches ) )
   {
     $where[] = "p.fk_pm_id IN (".implode( ',', $q_str ).") ";
     $search_data['project_managers_list'] = implode( '.', $q_str );
-    $search_string[] = '<span class="label">Lead Analyst</span> is '.implode( ' or ', $s_str );
+    $search_string[] = '<span class="label">Co-project Manager</span> is '.implode( ' or ', $s_str );
   }
 }
 // --------------------
@@ -291,30 +291,30 @@ if( preg_match( '/\/an-([\d\.]+)($|\/)/', $var_string, $matches ) )
 
 // --------------------
 // (coll) collector
-if( preg_match( '/\/coll-([\d\.]+)($|\/)/', $var_string, $matches ) )
-{
-	// make sure valid
-	$vals = explode( '.', $matches[1] );
-	$q_str = NULL;
-	$s_str = '';
-
-	foreach( $vals as $value )
-	{
-		$prj_name = $view->get( 'user', $value, F_PHP );
-		if( $prj_name )
-		{
-			$s_str[] = '"<span class="search_param">'.$prj_name.'</span>"';
-			$q_str[] = $value;
-		}
-	}
-
-	if( $q_str )
-	{
-		$where[] = "collp.fk_user_id IN (".implode( ',', $q_str ).") ";
-		$search_data['project_collectors_list'] = implode( '.', $q_str );
-		$search_string[] = '<span class="label">Primary Research Specialist</span> is '.implode( ' or ', $s_str );
-	}
-}
+//if( preg_match( '/\/coll-([\d\.]+)($|\/)/', $var_string, $matches ) )
+//{
+//	// make sure valid
+//	$vals = explode( '.', $matches[1] );
+//	$q_str = NULL;
+//	$s_str = '';
+//
+//	foreach( $vals as $value )
+//	{
+//		$prj_name = $view->get( 'user', $value, F_PHP );
+//		if( $prj_name )
+//		{
+//			$s_str[] = '"<span class="search_param">'.$prj_name.'</span>"';
+//			$q_str[] = $value;
+//		}
+//	}
+//
+//	if( $q_str )
+//	{
+//		$where[] = "collp.fk_user_id IN (".implode( ',', $q_str ).") ";
+//		$search_data['project_collectors_list'] = implode( '.', $q_str );
+//		$search_string[] = '<span class="label">Primary Research Specialist</span> is '.implode( ' or ', $s_str );
+//	}
+//}
 
 // --------------------
 // (con) contractor
@@ -671,8 +671,8 @@ $list->add_column( 'name',   'Name', 260 ); // 1
 $list->add_column( 'description', 'Description', 100, 'right', false ); // 2
 $list->add_column( 'org_name',    'Organization', 200 ); // 3
 $list->add_column( 'poc', 'Point of Contact', 100, 'right', false ); // 4
-$list->add_column( 'director',     'Director', 100 ); // 5
-$list->add_column( 'manager',     'Lead Analyst', 100 ); // 6
+$list->add_column( 'director',     'Project Manager', 100 ); // 5
+$list->add_column( 'manager',     'Co-project Manaager', 100 ); // 6
 $list->add_column( 'analysts',    'Analysts', 260 ); // 7
 $list->add_column( 'collectors',  'Prim. Research Specialist', 260 ); // 8
 $list->add_column( 'contractors', 'Contractors', 260 ); // 9
@@ -708,15 +708,15 @@ $CONFERENCES_COL = 21;
 
 $list->add_column( 'is_life_science', 'Type', 160 ); // 22
 $list->add_column( 'industry', 'Industry', 160 ); // 23
-$list->add_column( 'bd_poc', 'Business Development Point of Contact', 160 ); // 24
+$list->add_column( 'bd_poc', 'Business Development Point of Contact', 160 ); // 23
 
-$list->add_column( 'start',     'Start Date', 100 ); // 25
-$list->add_column( 'end',     'End Date', 100 ); // 26
+$list->add_column( 'start',     'Start Date', 100 ); // 24
+$list->add_column( 'end',     'End Date', 100 ); // 25
 
 if( !$csv && $USER->get('level') >= 5 )
-  $list->add_column( 'actions',      'Actions',     100, 'center', true ); // 27
+  $list->add_column( 'actions',      'Actions',     100, 'center', true ); // 26
 elseif( !$csv )
-  $list->add_column( 'actions',      'Actions',     75, 'center', true ); // 27
+  $list->add_column( 'actions',      'Actions',     75, 'center', true ); // 26
 
 //$list->required_columns( '0.1' );
 $list->default_columns( $search_data['col'] );

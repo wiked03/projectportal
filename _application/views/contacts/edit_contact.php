@@ -38,13 +38,13 @@ echo $form->print_item( 'title' );
 
 echo $form->print_item( 'specialty' );
 
-echo $form->print_item( 'type' );
+//echo $form->print_item( 'type' );
 
 ?>
-<div class="form_item definitions">
+<!--<div class="form_item definitions">
 <a href="javascript:show('contact_def_popup')" class="img help"></a>
-<?=SP_DIV?>
-</div>
+<?//=SP_DIV?>
+</div>-->
 <?
 
 echo $form->print_item( 'is_source' );

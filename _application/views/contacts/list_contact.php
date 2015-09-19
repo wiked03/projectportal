@@ -253,29 +253,29 @@ if( preg_match( '/\/ph-([^\/]+)/', $var_string, $matches ) )
 }
 // --------------------
 // (typ) type
-if( preg_match( '/\/typ-([\d\.]+)($|\/)/', $var_string, $matches ) )
-{
-  // make sure valid
-  $vals = explode( '.', $matches[1] );
-  $q_str = NULL;
-  $s_str = '';
-
-  foreach( $vals as $value )
-  {
-    if( isset( $LANG['source_types'][$value] ) )
-    {
-      $s_str[] = '"<span class="search_param">'.$LANG['source_types'][$value].'</span>"';
-      $q_str[] = $value;
-    }
-  }
-
-  if( $q_str )
-  {
-    $where[] = "c.type IN (".implode( ',', $q_str ).") ";
-    $search_data['type1'] = implode( '.', $q_str );
-    $search_string[] = '<span class="label">Type</span> is '.implode( ' or ', $s_str );
-  }
-}
+//if( preg_match( '/\/typ-([\d\.]+)($|\/)/', $var_string, $matches ) )
+//{
+//  // make sure valid
+//  $vals = explode( '.', $matches[1] );
+//  $q_str = NULL;
+//  $s_str = '';
+//
+//  foreach( $vals as $value )
+//  {
+//    if( isset( $LANG['source_types'][$value] ) )
+//    {
+//      $s_str[] = '"<span class="search_param">'.$LANG['source_types'][$value].'</span>"';
+//      $q_str[] = $value;
+//    }
+//  }
+//
+//  if( $q_str )
+//  {
+//    $where[] = "c.type IN (".implode( ',', $q_str ).") ";
+//    $search_data['type1'] = implode( '.', $q_str );
+//    $search_string[] = '<span class="label">Type</span> is '.implode( ' or ', $s_str );
+//  }
+//}
 // --------------------
 // (src) is_source
 if( preg_match( '/\/src-([\d]+)($|\/)/', $var_string, $matches ) )
@@ -616,8 +616,8 @@ while( $res = mysql_fetch_assoc( $result ) )
   }
   
   $val = '<a href="contacts/view/'.$res['id'].'" title="view"><img width="16" height="16" src="img/icons/vcard.png"/></a>'.
-         '<a href="contacts/edit/'.$res['id'].'" title="edit"><img width="16" height="16" src="img/icons/pencil.png"/></a>'.
-         '<a href="interviews/edit/c-'.$res['id'].'" title="add interview"><img width="16" height="16" src="img/icons/comments_add.png"/></a>'; 
+         '<a href="contacts/edit/'.$res['id'].'" title="edit"><img width="16" height="16" src="img/icons/pencil.png"/></a>';
+         //'<a href="interviews/edit/c-'.$res['id'].'" title="add interview"><img width="16" height="16" src="img/icons/comments_add.png"/></a>'; 
 
   if( $USER->get('level') >= 5 )
     $val .= '<a href="javascript:delete_contact('.$res['id'].')" title="delete"><img width="16" height="16" src="img/icons/trash.png"/></a>';

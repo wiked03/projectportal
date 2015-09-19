@@ -72,8 +72,8 @@ $form->set_label( 'phone1', 'Phone' );
 echo $form->print_item( 'phone1' );
 
 
-$form->add_select( 'type1', $LANG['source_types_full'], 'Source Type', array( 'multi'=>1, 'reset'=>'- any -', 'reset_id'=>0, 'me'=>'sel_type' ) );
-echo $form->print_item( 'type1', 1, 'type' );
+//$form->add_select( 'type1', $LANG['source_types_full'], 'Source Type', array( 'multi'=>1, 'reset'=>'- any -', 'reset_id'=>0, 'me'=>'sel_type' ) );
+//echo $form->print_item( 'type1', 1, 'type' );
 
 $form->update_select( 'is_source', NULL, array(2=>'- any -') );
 echo $form->print_item( 'is_source' );
@@ -119,7 +119,7 @@ echo $form->print_select_popup( 'col' );
 
 <script type="text/javascript">
 var sel_specialty = new Select_multi( 'sel_specialty', 'f_contact-specialty1' );
-var sel_type = new Select_multi( 'sel_type', 'f_contact-type1' );
+//var sel_type = new Select_multi( 'sel_type', 'f_contact-type1' );
 var sel_degree = new Select_multi( 'sel_degree', 'f_contact-degree1' );
 var sel_state = new Select_multi( 'sel_state', 'f_contact-state' );
 sel_state.item_text = '';

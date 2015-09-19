@@ -92,8 +92,8 @@ class Contact extends CORE_Model
     $this->form->add_select( 'language', $LANG['languages'], 'Language', array( 'multi'=>1, 'me'=>'sel_language', 'reset'=>'n/a', 'reset_id'=>1000 ) );
     $this->form->add_select( 'area', $LANG['areas'], 'Geographical Area', array( 'multi'=>1, 'me'=>'sel_area', 'reset'=>'n/a', 'reset_id'=>1000 ) );
 
-    $this->form->add_select( 'type', $LANG['source_types_full'], 'Source Type' );
-    $this->form->add_select( 'is_source', $LANG['contact_types'] );
+    //$this->form->add_select( 'type', $LANG['source_types_full'], 'Source Type' );
+    $this->form->add_select( 'is_source', $LANG['contact_types'], 'Source Type' );
     $this->form->add_select( 'recontact', $LANG['yes_null'], 'Open to Recontact' );
     $this->form->add_select( 'reliability', $LANG['reliability'], 'Source Reliability' );
 

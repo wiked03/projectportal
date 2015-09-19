@@ -183,7 +183,7 @@ echo $form->print_item( 'is_life_science', 0 );
 
 echo $form->print_item( 'specialty', 0 );
 
-echo $form->print_item( 'industry', 0 );
+//echo $form->print_item( 'industry', 0 );
 
 ?>
 </div>
@@ -245,19 +245,19 @@ else
   $val = 'None';
 echo $form->print_item( 'analysts', 0, NULL, $val );
 
-$collectors = $form->get( 'collectors' );
-if( $collectors )
-{
-	$collectors = explode( '.', $form->get( 'collectors' ) );
-	foreach( $collectors as $collector )
-	{
-		$val_collectors[] = '<span class="img_small user">'.$my_view->get( 'user', $collector ).'</span>';
-	}
-	$val_collectors = implode( ', ', $val_collectors );
-}
-else
-	$val_collectors = 'None';
-echo $form->print_item( 'collectors', 0, NULL, $val_collectors );
+//$collectors = $form->get( 'collectors' );
+//if( $collectors )
+//{
+//	$collectors = explode( '.', $form->get( 'collectors' ) );
+//	foreach( $collectors as $collector )
+//	{
+//		$val_collectors[] = '<span class="img_small user">'.$my_view->get( 'user', $collector ).'</span>';
+//	}
+//	$val_collectors = implode( ', ', $val_collectors );
+//}
+//else
+//	$val_collectors = 'None';
+//echo $form->print_item( 'collectors', 0, NULL, $val_collectors );
 
 $contractors = $form->get( 'contractors' );
 if( $contractors )
@@ -837,72 +837,72 @@ else
 <!-- Interviews  -->
 
 <?
-if( $USER->get('level') >= 0 ) // for all
-{
+//if( $USER->get('level') >= 0 ) // for all
+//{
 ?>
-  <div>
+  <!--<div>
   <h3 class="underline"><div class="expand-interview"><a>Interviews</a></p></h3>
-  </div>
+  </div> -->
 
-<div id='view_interview_list' class="interview-list">
+<!--<div id='view_interview_list' class="interview-list"> -->
 <?
-
-// get count from DB
-$sql = "SELECT COUNT( DISTINCT fk_interview_id ) AS total
-        FROM interview_projects AS ip
-          LEFT JOIN interviews AS i ON ip.fk_interview_id=i.pk_id
-        WHERE fk_project_id=".$id."
-          AND NOT is_activity";
-$result = mysql_query( $sql );
-$res = mysql_fetch_assoc( $result );
-
-$total = $res['total'];
-
-$sql = "SELECT i.pk_id AS id, i.*, CONCAT_WS( ' ',ui.first_name,ui.last_name) AS analyst, p.name AS proj_name, (COUNT( ip.fk_project_id ) - 1) AS proj_count, p.pk_id AS proj_id, c.pk_id AS contact_id, CONCAT_WS( ' ',c.first_name,c.last_name) AS contact_name, c.*
-        FROM interviews AS i
-          LEFT JOIN user_info AS ui ON ui.pk_id=i.fk_user_id
-          LEFT JOIN interview_projects AS ip ON ip.fk_interview_id=i.pk_id
-          LEFT JOIN projects AS p ON p.pk_id=ip.fk_project_id
-          LEFT JOIN contacts AS c ON c.pk_id=i.fk_contact_id
-        WHERE ip.fk_project_id=".$id."
-          AND NOT is_activity
-        GROUP BY id
-        ORDER BY i.int_date DESC
-        LIMIT 10";
-
-$result = mysql_query( $sql );
-
-
-while( $res = mysql_fetch_assoc( $result ) )
-{
-  $val = '&nbsp;&nbsp;&nbsp;'.CORE_date($res['int_date'], F_DATE_HTM).' interview of&nbsp;&nbsp;'.
-         '<a class="img_small contacts" href="contacts/view/'.$res['contact_id'].'">'.
-          CORE_encode( $res['contact_name'], F_HTM, F_SQL ).'</a>';
-
-  $val .= '&nbsp;&nbsp;&nbsp;by&nbsp;&nbsp;'.
-         '<span class="img_small user">'.
-          CORE_encode( $res['analyst'], F_HTM, F_SQL ).'</span>';
-
-  echo '<div class="interview_item">
-   <span class="org_name interviews"><a href="interviews/view/'.$res['id'].'">'.$LANG['source_types_short'][$res['type']].'-'.sprintf( '%03d', $res['fk_contact_id'] ).'-'.$res['int_number'].'</a>'.$val.'</span>'.SP_DIV.'</div>';
-}
-
-if( $total > 10 )
-{
-  $diff = ( $total - 10 );
-    echo '<div class="interview_item">
-   <span class="org_name more"><a href="interviews/prj-'.$id.'">and '.$diff.' other'.(($diff > 1) ? 's' : '').'...</a></span>'.SP_DIV.'</div>';
-}
-elseif( !$total )
-{
-  echo '<div class="contact_org"><span class="org_name">None</span>'.SP_DIV.'</div>';
-}
-
-?>
-</div>
+//
+//// get count from DB
+//$sql = "SELECT COUNT( DISTINCT fk_interview_id ) AS total
+//        FROM interview_projects AS ip
+//          LEFT JOIN interviews AS i ON ip.fk_interview_id=i.pk_id
+//        WHERE fk_project_id=".$id."
+//          AND NOT is_activity";
+//$result = mysql_query( $sql );
+//$res = mysql_fetch_assoc( $result );
+//
+//$total = $res['total'];
+//
+//$sql = "SELECT i.pk_id AS id, i.*, CONCAT_WS( ' ',ui.first_name,ui.last_name) AS analyst, p.name AS proj_name, (COUNT( ip.fk_project_id ) - 1) AS proj_count, p.pk_id AS proj_id, c.pk_id AS contact_id, CONCAT_WS( ' ',c.first_name,c.last_name) AS contact_name, c.*
+//        FROM interviews AS i
+//          LEFT JOIN user_info AS ui ON ui.pk_id=i.fk_user_id
+//          LEFT JOIN interview_projects AS ip ON ip.fk_interview_id=i.pk_id
+//          LEFT JOIN projects AS p ON p.pk_id=ip.fk_project_id
+//          LEFT JOIN contacts AS c ON c.pk_id=i.fk_contact_id
+//        WHERE ip.fk_project_id=".$id."
+//          AND NOT is_activity
+//        GROUP BY id
+//        ORDER BY i.int_date DESC
+//        LIMIT 10";
+//
+//$result = mysql_query( $sql );
+//
+//
+//while( $res = mysql_fetch_assoc( $result ) )
+//{
+//  $val = '&nbsp;&nbsp;&nbsp;'.CORE_date($res['int_date'], F_DATE_HTM).' interview of&nbsp;&nbsp;'.
+//         '<a class="img_small contacts" href="contacts/view/'.$res['contact_id'].'">'.
+//          CORE_encode( $res['contact_name'], F_HTM, F_SQL ).'</a>';
+//
+//  $val .= '&nbsp;&nbsp;&nbsp;by&nbsp;&nbsp;'.
+//         '<span class="img_small user">'.
+//          CORE_encode( $res['analyst'], F_HTM, F_SQL ).'</span>';
+//
+//  echo '<div class="interview_item">
+//   <span class="org_name interviews"><a href="interviews/view/'.$res['id'].'">'.$LANG['source_types_short'][$res['type']].'-'.sprintf( '%03d', $res['fk_contact_id'] ).'-'.$res['int_number'].'</a>'.$val.'</span>'.SP_DIV.'</div>';
+//}
+//
+//if( $total > 10 )
+//{
+//  $diff = ( $total - 10 );
+//    echo '<div class="interview_item">
+//   <span class="org_name more"><a href="interviews/prj-'.$id.'">and '.$diff.' other'.(($diff > 1) ? 's' : '').'...</a></span>'.SP_DIV.'</div>';
+//}
+//elseif( !$total )
+//{
+//  echo '<div class="contact_org"><span class="org_name">None</span>'.SP_DIV.'</div>';
+//}
+//
+//?>
+<!--</div> -->
 
 <?
-}
+//}
 ?>
 
   </form>

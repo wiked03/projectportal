@@ -35,7 +35,7 @@ echo $form->print_item( 'is_life_science' );
 
 echo $form->print_item( 'specialty' );
 
-echo $form->print_item( 'industry' );
+//echo $form->print_item( 'industry' );
 
 ?>
 
@@ -52,7 +52,7 @@ echo $form->print_item( 'fk_pm_id' );
 
 echo $form->print_item( 'analysts' );
 
-echo $form->print_item( 'collectors' );
+//echo $form->print_item( 'collectors' );
 
 echo $form->print_item( 'contractors' );
 
@@ -91,11 +91,11 @@ sel_specialty.default_value = 1000;
 sel_specialty.default_text = 'n/a';
 sel_specialty.item_text = '';
 
-var sel_industry = new Select_multi( 'sel_industry', 'f_project-industry' );
-sel_industry.clear_all = '1000';
-sel_industry.default_value = 1000;
-sel_industry.default_text = 'n/a';
-sel_industry.item_text = '';
+//var sel_industry = new Select_multi( 'sel_industry', 'f_project-industry' );
+//sel_industry.clear_all = '1000';
+//sel_industry.default_value = 1000;
+//sel_industry.default_text = 'n/a';
+//sel_industry.item_text = '';
 
 var sel_users = new Select_multi( 'sel_users', 'f_project-analysts' );
 sel_users.clear_all = '';
@@ -109,10 +109,10 @@ sel_conferences.default_text = 'None Selected';
 sel_conferences.item_text = 'conferences';
 */
 
-var sel_collectors = new Select_multi( 'sel_collectors', 'f_project-collectors' );
-sel_collectors.clear_all = '';
-sel_collectors.default_text = 'None Selected';
-sel_collectors.item_text = 'collectors';
+//var sel_collectors = new Select_multi( 'sel_collectors', 'f_project-collectors' );
+//sel_collectors.clear_all = '';
+//sel_collectors.default_text = 'None Selected';
+//sel_collectors.item_text = 'collectors';
 
 var sel_contractors = new Select_multi( 'sel_contractors', 'f_project-contractors' );
 sel_contractors.clear_all = '';
@@ -160,17 +160,17 @@ function make_anonymous( )
   if( Dom.get('f_project-is_life_science').value == 1 ) // life science
   {
     sel_specialty.enabled = true;
-    sel_industry.enabled = false;
+   // sel_industry.enabled = false;
     $("#f_project-specialty").fadeTo(100, 1);
-    $("#f_project-industry").fadeTo(100, 0.2);
+    //$("#f_project-industry").fadeTo(100, 0.2);
 
   }
   else  // non life science
   {
     sel_specialty.enabled = false;
-    sel_industry.enabled = true;
+    //sel_industry.enabled = true;
     $("#f_project-specialty").fadeTo(100, 0.2);
-    $("#f_project-industry").fadeTo(100, 1);
+    //$("#f_project-industry").fadeTo(100, 1);
   }
 }
 

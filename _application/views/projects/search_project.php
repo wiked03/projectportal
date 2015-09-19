@@ -46,15 +46,15 @@ echo $form->print_item( 'description' );
 //echo $form->print_item( 'poc_search_val' );
 echo $form->print_item( 'poc' );
 
-$form->update_select( 'is_life_science', NULL, array(2=>'Any') );
-$form->set( 'is_life_science', 2 );
+$form->update_select( 'is_life_science', NULL, array(4=>'Any') );
+$form->set( 'is_life_science', 4 );
 echo $form->print_item( 'is_life_science' );
 
 $form->add_select( 'specialty1', $LANG['specialties'], 'Therapeutic Area', array( 'multi'=>1, 'reset'=>'- any -', 'reset_id'=>0, 'me'=>'sel_specialty' ) );
 echo $form->print_item( 'specialty1' );
 
-$form->add_select( 'industry', $LANG['industries'], 'Industry', array( 'multi'=>1, 'reset'=>'- any -', 'reset_id'=>0, 'me'=>'sel_industry' ) );
-echo $form->print_item( 'industry' );
+//$form->add_select( 'industry', $LANG['industries'], 'Industry', array( 'multi'=>1, 'reset'=>'- any -', 'reset_id'=>0, 'me'=>'sel_industry' ) );
+//echo $form->print_item( 'industry' );
 
 ?>
 </div>
@@ -69,7 +69,7 @@ echo $form->print_item( 'managers' );
 
 echo $form->print_item( 'analysts' );
 
-echo $form->print_item( 'collectors' );
+//echo $form->print_item( 'collectors' );
 
 echo $form->print_item( 'contractors' );
 
@@ -117,7 +117,7 @@ echo $form->print_select_popup( 'col' );
 <script type="text/javascript">
 
 var sel_specialty = new Select_multi( 'sel_specialty', 'f_project-specialty1' );
-var sel_industry = new Select_multi( 'sel_industry', 'f_project-industry' );
+//var sel_industry = new Select_multi( 'sel_industry', 'f_project-industry' );
 
 var sel_columns = new Select_multi( 'sel_columns', 'f_project-col' );
 sel_columns.override_output = 'Select Columns';
@@ -152,8 +152,8 @@ sel_users.clear_all = '';
 var sel_conferences = new Select_multi( 'sel_conferences', 'f_project-conferences' );
 sel_conferences.clear_all = '';
 
-var sel_collectors = new Select_multi( 'sel_collectors', 'f_project-collectors' );
-sel_collectors.clear_all = '';
+//var sel_collectors = new Select_multi( 'sel_collectors', 'f_project-collectors' );
+//sel_collectors.clear_all = '';
 
 var sel_contractors= new Select_multi( 'sel_contractors', 'f_project-contractors' );
 sel_contractors.clear_all = '';

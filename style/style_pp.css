@@ -279,24 +279,25 @@ label.checkbox.img
 }
 
 
-.search_form #f_contact div.is_source, .search_form div.is_source
+/*.search_form #f_contact div.is_source, .search_form div.is_source
 {
-  width: 82px;
+  width: 427px;
   clear: none;
   margin-left: 8px;
 }
 .search_form #f_contact div.is_source select, .search_form div.is_source select
 {
-  width: 82px;
+  width: 275px;
+  padding: 2px 5px;
 }
 .search_form #f_contact div.is_source span, .search_form div.is_source span
 {
   width: 70px;
 }
+*/
 
 
-
-#f_contact div.type, #f_contact div.is_source
+/*#f_contact div.type, #f_contact div.is_source
 {
   width: 357px;
 }
@@ -307,7 +308,7 @@ label.checkbox.img
 #f_contact div.type span
 {
   width: 190px;
-}
+}*/
 
 
 .search_form #f_contact div.type, .search_form div.type
@@ -333,14 +334,14 @@ label.checkbox.img
   padding-left: 10px;
   clear: none;
 }
-#f_contact div.is_source
+/*#f_contact div.is_source
 {
   padding-left: 140px;
 }
 .search_form #f_contact div.is_source
 {
   padding-left: 0;
-}
+}*/
 
 
 #f_contact div.salutation, #f_contact div.recontact

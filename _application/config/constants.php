@@ -197,7 +197,8 @@ $LANG['source_types_full'] = array(
 12=>"VEN: Vendor",  
 15=>'OTH: Other');
 
-$LANG['contact_types'] = array( 1=>'Source', 0=>'Lead', 3=>'Personal Source', 4=>'Contractor', );
+//$LANG['contact_types'] = array( 1=>'Source', 0=>'Lead', 3=>'Personal Source', 4=>'Contractor', );
+$LANG['contact_types'] = array( 1=>'Source', 0=>'Lead', 4=>'Contractor', );
 
 $LANG['reliability'] = array( 10=>"n/a", 4=>"A: Completely Reliable", 3=>"B: Usually Reliable", 2=>"C: Not Usually Reliable", 1=>"D: Unreliable" );
 
@@ -436,7 +437,8 @@ $LANG['concerns'] = array( 0=>'Project on track', 1=>'Concerns', 2=>'Immediate p
 $LANG['open'] = array( 1=>'Open', 0=>'Closed' );
 $LANG['yes'] = array( 1=>'Yes', 0=>'No' );
 $LANG['yes_null'] = array( 2=>'n/a', 1=>'Yes', 0=>'No' );
-$LANG['life_science'] = array( 1=>'Life Science', 0=>'Business Services' );
+//$LANG['life_science'] = array( 1=>'Life Science', 0=>'Business Services' );
+$LANG['life_science'] = array( 3=> 'MA', 2=>'MR', 1=>'CI', 0=>'Hybrid' );
 $LANG['prefix'] = array( 0=>'', 1=>'US', 2=>'EU');
 
 $LANG['contact_method'] = array( 1=>'Phone', 2=>'Email', 3=>'Email and Phone', 4=>'Face to Face' );

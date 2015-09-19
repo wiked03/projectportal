@@ -30,8 +30,8 @@ echo $form->print_item( 'level' );
 ?>
 <div>
 <p>
-Analyst: Can create and edit contacts, and create interviews.<br/><br/>
-Manager: Can create and edit contacts, interviews, and projects.<br/></br>
+Analyst: Can create and edit contacts.<br/><br/>
+Manager: Can create and edit contacts and projects.<br/></br>
 Admin: Can create, edit, and delete anything.
 </p>
 </div>

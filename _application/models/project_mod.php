@@ -14,7 +14,8 @@ class Project extends CORE_Model
                            'fk_created_by_user', 'created', 'fk_last_changed_user', 
                            'last_changed', 'imported', 'value', 'hourly_rate', 
                            'specialty', 'poc', 'fk_target_id', 'is_life_science',
-                           'industry', 'fk_dir_id', 'prefix', 'bd_poc', 'months');
+                           //'industry', 'fk_dir_id', 'prefix', 'bd_poc', 'months');
+						   'fk_dir_id', 'prefix', 'bd_poc', 'months');
 
     $this->_set_defaults( );
 
@@ -59,25 +60,25 @@ class Project extends CORE_Model
     $this->form->add_textarea( 'description', 'Description' );
 
     $this->form->add_select( 'is_active', $LANG['open'], 'Status' );
-    $this->form->add_select( 'is_life_science', $LANG['life_science'], 'PP Designation' );
+    $this->form->add_select( 'is_life_science', $LANG['life_science'], 'LSD Designation' );
     $this->form->add_select( 'prefix', $LANG['prefix'], 'Contract Origination' );
     
     $this->form->add_input( 'id_prefix', 'Project ID' );
     
-    $this->form->add_select( 'fk_pm_id', $my_view->get_list( 'active_users_with_none', F_HTM, $this->get('fk_pm_id') ), 'Lead Analyst' );
-    $this->form->add_select( 'fk_dir_id', $my_view->get_list( 'active_users_with_none', F_HTM, $this->get('fk_dir_id') ), 'Director' );
+    $this->form->add_select( 'fk_pm_id', $my_view->get_list( 'active_users_with_none', F_HTM, $this->get('fk_pm_id') ), 'Co-project Manager' );
+    $this->form->add_select( 'fk_dir_id', $my_view->get_list( 'active_users_with_none', F_HTM, $this->get('fk_dir_id') ), 'Project Manager' );
 
-    $this->form->add_select( 'directors', $my_view->get_list( 'active_users', F_HTM, $this->get('fk_dir_id') ), 'Directors', array( 'me'=>'sel_directors', 'reset'=>'None Selected', 'multi'=>1 ) );
-    $this->form->add_select( 'managers', $my_view->get_list( 'active_users', F_HTM, $this->get('fk_pm_id') ), 'Lead Analysts', array( 'me'=>'sel_managers', 'reset'=>'None Selected', 'multi'=>1 ) );
+    $this->form->add_select( 'directors', $my_view->get_list( 'active_users', F_HTM, $this->get('fk_dir_id') ), 'Project Manager', array( 'me'=>'sel_directors', 'reset'=>'None Selected', 'multi'=>1 ) );
+    $this->form->add_select( 'managers', $my_view->get_list( 'active_users', F_HTM, $this->get('fk_pm_id') ), 'Co-project Manager', array( 'me'=>'sel_managers', 'reset'=>'None Selected', 'multi'=>1 ) );
     $this->form->add_select( 'analysts', $my_view->get_list( 'project_users', F_HTM, $this->get('id') ), 'Analysts', array( 'me'=>'sel_users', 'reset'=>'None Selected', 'multi'=>1 ) );
     $this->form->add_select( 'conferences', $my_view->get_list( 'project_conferences', F_HTM, $this->get('id') ), 'Conferences', array( 'me'=>'sel_conferences', 'reset'=>'None Selected', 'multi'=>1 ) );
     
-    $this->form->add_select( 'collectors', $my_view->get_list( 'project_users', F_HTM, $this->get('id') ), 'Primary Research Specialists', array( 'me'=>'sel_collectors', 'reset'=>'None Selected', 'multi'=>1 ) );
+    //$this->form->add_select( 'collectors', $my_view->get_list( 'project_users', F_HTM, $this->get('id') ), 'Primary Research Specialists', array( 'me'=>'sel_collectors', 'reset'=>'None Selected', 'multi'=>1 ) );
     $this->form->add_select( 'contractors', $my_view->get_list( 'all_contractors', F_HTM, $this->get('id') ), 'Contractors', array( 'me'=>'sel_contractors', 'reset'=>'None Selected', 'multi'=>1 ) ); 
     //$this->form->add_select( 'points_of_contact', $my_view->get_list( 'all_contacts', F_HTM, $this->get('id') ), 'Points of Contacts', array( 'me'=>'sel_points_of_contact', 'reset'=>'None Selected', 'multi'=>1 ) ); 
     $this->form->add_input( 'poc', 'Point of Contact', array('maxlength'=>255) );
     $this->form->add_select( 'specialty', $LANG['specialties'], 'Therapeutic Area', array( 'multi'=>1, 'me'=>'sel_specialty', 'reset'=>'n/a', 'reset_id'=>1000 ) );
-    $this->form->add_select( 'industry', $LANG['industries'], 'Industry', array( 'multi'=>1, 'me'=>'sel_industry', 'reset'=>'n/a', 'reset_id'=>1000 ) );
+    //$this->form->add_select( 'industry', $LANG['industries'], 'Industry', array( 'multi'=>1, 'me'=>'sel_industry', 'reset'=>'n/a', 'reset_id'=>1000 ) );
 
     $this->form->add_input( 'value', 'Research Budget', array('maxlength'=>15, 'style' => 'width:80px;', 'align' => 'right') );
     $this->form->add_input( 'sum_expenses', 'Project Expenses', array('maxlength'=>15,  'style' => 'width:80px;', 'align' => 'right') );
@@ -152,7 +153,7 @@ class Project extends CORE_Model
   {
     $this->write_back_users();
     $this->write_back_conferences();
-    $this->write_back_collectors();
+    //$this->write_back_collectors();
     $this->write_back_contractors();
   }
 
@@ -172,7 +173,7 @@ class Project extends CORE_Model
     $this->data['hourly_rate'] = format_currency($this->data['raw_hourly_rate']);
     $this->load_users( );
     $this->load_conferences( );
-    $this->load_collectors( );
+ //   $this->load_collectors( );
     $this->load_contractors( );
     $this->count_expenses( );
 

@@ -61,7 +61,7 @@ echo $form->print_item( 'area', 0 );
 </div>
 <div class="right_side">
 <?
-echo $form->print_item( 'type', 0 );
+//echo $form->print_item( 'type', 0 );
 echo $form->print_item( 'is_source', 0 );
 
 echo $form->print_item( 'recontact', 0 );

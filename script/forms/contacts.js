@@ -46,8 +46,8 @@ function make_project_query( )
   if( form.specialty1.value != '' )
     q_str += '/ta-'+CORE_uri_encode( form.specialty1.value );
 
-  if( form.industry.value != '' )
-    q_str += '/in-'+CORE_uri_encode( form.industry.value );
+  //if( form.industry.value != '' )
+  //  q_str += '/in-'+CORE_uri_encode( form.industry.value );
 
   if( form.notes.value )
     q_str += '/not-'+CORE_uri_encode( form.notes.value );
@@ -70,8 +70,8 @@ function make_project_query( )
   if( form.analysts.value )
     q_str += '/an-'+CORE_uri_encode( form.analysts.value );
 
-  if( form.collectors.value )
-	    q_str += '/coll-'+CORE_uri_encode( form.collectors.value );
+ // if( form.collectors.value )
+//	    q_str += '/coll-'+CORE_uri_encode( form.collectors.value );
   
   if( form.contractors.value )
     q_str += '/con-'+CORE_uri_encode( form.contractors.value );
@@ -108,7 +108,7 @@ function make_project_query( )
   if( form.is_active.value && form.is_active.value<4 )
     q_str += '/ia-'+CORE_uri_encode( form.is_active.value );
 
-  if( form.is_life_science.value && form.is_life_science.value<2 )
+  if( form.is_life_science.value && form.is_life_science.value<4 )
     q_str += '/ils-'+CORE_uri_encode( form.is_life_science.value );
 
   if( form.prefix.value )
@@ -169,8 +169,8 @@ function make_contact_query( )
   if( form.phone1.value )
     q_str += '/ph-'+CORE_uri_encode( form.phone1.value.replace( /[^x\d]/gi, '' ) );
 
-  if( form.type1.value != '' )
-    q_str += '/typ-'+CORE_uri_encode( form.type1.value );
+  //if( form.type1.value != '' )
+  //  q_str += '/typ-'+CORE_uri_encode( form.type1.value );
 
   if( form.is_source.value != '2' )
     q_str += '/src-'+CORE_uri_encode( form.is_source.value );
