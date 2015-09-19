@@ -1,0 +1,253 @@
+
+
+.cal_header
+{
+  background: #a0a0a0;
+  width: 165px;
+  height: 20px;
+  margin: 0;
+}
+
+.cal_header a
+{
+  float: left;
+  text-align: center;
+  margin: 1px;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  color: #009933;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cal_header a:hover
+{
+  color: #ffffff;
+  background: #009933;
+}
+
+.cal_header a span
+{
+  display: block;
+  padding-top: -5px;
+}
+
+.cal_header .header_date
+{
+  width: 125px;
+  height: 20px;
+  float: left;
+  text-align: center;
+  padding: 0;
+}
+
+.cal_header .header_date span
+{
+  font-size: 12px;
+  color: #ffffff;
+  vertical-align: text-bottom;
+}
+
+
+.cal_body
+{ 
+  padding: 5px;
+  background: #f8f8f8;
+  border: 1px solid #a0a0a0;
+  clear: both;
+  margin: 0;
+  width: 163px;
+  w\idth: 153px;
+}
+
+.cal_body td, .cal_body th 
+{ 
+  padding: 0;
+  margin: 0;
+  font-size: 11px;
+  font-weight: normal;
+  vertical-align: middle;
+  text-align: center;
+  color: #000000;
+}
+
+.cal_body th
+{
+  height: 16px;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.cal_body th.weekend_label
+{
+  /* background: #e0e0e0;*/
+}
+
+
+.cal_body a, .cal_body td span
+{
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 1px;
+  font-size: 11px;
+  width: 22px;
+  w\idth: 20px;
+  height: 18px;
+  he\ight: 16px;
+  text-align: center;
+}
+
+.cal_body .today a
+{
+  border: 1px solid #ffc140;
+  padding: 0px;
+  color: #000000;
+  background: #ffffb0;
+}
+
+.cal_body .selected a
+{
+  border: 1px solid #009933;
+  padding: 0px;
+  color: #000000;
+  background: #ffe0e0;
+}
+
+.cal_body .other_month a, .cal_body td span
+{
+  color: #a0a0a0;
+}
+
+.cal_body a:hover
+{
+  color: #ffffff;
+  background: #009933;
+  text-decoration: none;
+}
+
+
+.mini_cal .cal_select_month
+{
+  width: 57px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.mini_cal .cal_select_year
+{
+  width: 57px;
+  height: 20px;
+  margin: 0 0 0 5px;
+  padding: 0;
+  font-size: 11px;
+  vertical-align: top;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+.med_cal .cal_header
+{
+  width: 375px;
+  height: 35px;
+}
+
+.med_cal .cal_header a
+{
+  margin: 5px;
+  font-size: 18px;
+  width: 24px;
+  height: 24px;
+}
+
+.med_cal .cal_header .header_date
+{
+  width: 307px;
+  height: 24px;
+  margin-top: 4px;
+  font-size: 18px;
+  padding: 0;
+}
+
+.med_cal .cal_header .header_date span
+{
+  font-size: 18px;
+  padding: 0;
+  line-height: 28px;
+}
+
+.med_cal .cal_select_month
+{
+  width: 150px;
+  margin: 0;
+}
+
+.med_cal .cal_select_year
+{
+  width: 75px;
+  margin: 0 0 0 15px;
+}
+
+.med_cal .cal_body
+{ 
+  padding: 5px;
+  width: 375px;
+  w\idth: 363px;
+}
+
+.med_cal .cal_body th 
+{ 
+  padding: 3px 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+.med_cal .cal_body a, .med_cal .cal_body td span
+{
+  padding-top: 6px;
+  font-size: 18px;
+  width: 52px;
+  w\idth: 50px;
+  height: 35px;
+  he\ight: 28px;
+}
+
+.med_cal .cal_body .today a, .med_cal .cal_body .selected a
+{
+  padding-top: 5px;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+.cal_popup_container
+{
+  position: relative;
+}
+
+.cal_popup_link
+{
+
+}
+
+.cal_popup
+{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 102;
+}
+
+.cal_popup_frame
+{
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 0;
+}

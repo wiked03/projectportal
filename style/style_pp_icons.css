@@ -1,0 +1,114 @@
+a.user_list
+{ background-image: url(../img/icons/group.png);
+}
+a.user, span.user
+{ background-image: url(../img/icons/user.png);
+}
+a.user_add, span.user_add
+{ background-image: url(../img/icons/user_add.png);
+}
+a.login
+{ background-image: url(../img/icons/key.png);
+}
+a.logout
+{ background-image: url(../img/icons/lock.png);
+}
+a.help
+{ background-image: url(../img/icons/help.png);
+}
+a.contacts, span.contacts, h1.contacts, h2.contacts, a.contact, span.contact, input.contact
+{ background-image: url(../img/icons/vcard.png);
+}
+a.contact_add, span.contact_add, input.contact_add
+{ background-image: url(../img/icons/vcard_add.png);
+}
+a.contact_delete
+{ background-image: url(../img/icons/vcard_delete.png);
+}
+a.contractors, span.contractors, h1.contractors, h2.contractors, a.contractor, span.contractor, input.contractor
+{ background-image: url(../img/icons/vcard.png);
+}
+a.contractor_add, span.contractor_add, input.contractor_add
+{ background-image: url(../img/icons/vcard_add.png);
+}
+a.contractor_delete
+{ background-image: url(../img/icons/vcard_delete.png);
+}
+a.activity, span.activity, h1.activity, h2.activity
+{ background-image: url(../img/icons/phone.png);
+}
+a.activity_add, span.activity_add, input.activity_add
+{ background-image: url(../img/icons/phone_add.png);
+}
+a.activity_delete
+{ background-image: url(../img/icons/phone_delete.png);
+}
+a.org, span.org, input.org
+{ background-image: url(../img/icons/building.png);
+}
+a.org_delete
+{ background-image: url(../img/icons/building_delete.png);
+}
+a.org_add, span.org_add, input.org_add
+{ background-image: url(../img/icons/building_add.png);
+}
+a.proj, span.proj
+{ background-image: url(../img/icons/report.png);
+}
+a.proj_delete
+{ background-image: url(../img/icons/report_delete.png);
+}
+a.proj_add, span.proj_add
+{ background-image: url(../img/icons/report_add.png);
+}
+a.interviews, span.interviews, a.interview, span.interview
+{ background-image: url(../img/icons/comments.png);
+}
+a.interview_add
+{ background-image: url(../img/icons/comments_add.png);
+}
+a.interview_delete
+{ background-image: url(../img/icons/comments_delete.png);
+}
+a.edit
+{ background-image: url(../img/icons/pencil.png);
+}
+a.print
+{ background-image: url(../img/icons/printer.png);
+}
+a.export
+{ background-image: url(../img/icons/excel_export.png);
+}
+a.email
+{ background-image: url(../img/icons/email_go.png);
+}
+a.export_word
+{ background-image: url(../img/icons/word_export.png);
+}
+a.star, a.star_0, label.star
+{ background-image: url(../img/icons/star.png);
+}
+a.star_delete
+{ background-image: url(../img/icons/star_delete.png);
+}
+a.star_add
+{ background-image: url(../img/icons/star_add.png);
+}
+a.star_1
+{ background-image: url(../img/icons/vcard_star.png);
+}
+a.star_2
+{ background-image: url(../img/icons/comments_star.png);
+}
+a.more, span.more
+{ background-image: url(../img/icons/bullet_go.png);
+}
+a.search
+{ background-image: url(../img/icons/magnifier2.png);
+}
+a.search_add
+{ background-image: url(../img/icons/magnifier_add.png);
+}
+a.search_delete
+{ background-image: url(../img/icons/magnifier_delete.png);
+}

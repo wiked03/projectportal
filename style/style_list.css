@@ -1,0 +1,260 @@
+
+/*-----------------------------------------------------------------------------------------*/
+/* --- main stuff --- */
+
+.list_frame
+{
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.table_frame
+{
+  width: 100%;
+  overflow: auto;
+}
+
+.list_table_empty
+{
+  text-align: center;
+  font-size: 16px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+table.list_table
+{
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: #000000;
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  margin: 10px 0;
+  clear: both;
+  float: left;
+}
+
+.list_table th
+{
+  border-left: 1px solid #b0b0b0;
+  border-bottom: 2px solid #606060;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.list_table a
+{
+  font-weight: normal;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.list_table a:hover
+{
+  text-decoration: underline;
+}
+
+.list_table th a, .list_table th span
+{
+  font-weight: bold;
+  font-size: 11px;
+  text-align: center;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 3px;
+}
+
+.list_table th a:hover
+{
+  background: #e0e0e0;
+  text-decoration: none;
+}
+
+.list_table .first
+{
+  border-left: 0;
+}
+
+.list_table tfoot td
+{
+  border: 1px solid #b0b0b0;
+  border-width: 2px 0 0 1px;
+  border-top: 2px solid #606060;
+  padding: 3px 7px;
+  font-weight: bold;
+}
+
+.list_table.no_foot
+{
+  border-bottom: 2px solid #606060;
+}
+
+.list_table.no_head
+{
+  border-top: 2px solid #606060;
+}
+
+.list_table td
+{
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  padding: 3px 7px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.list_table td div
+{
+  background-color: inherit;  
+  /*height: 16px;*/
+  text-align: inherit;
+}
+
+.list_table div
+{
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list_table div:hover
+{
+  overflow: visible;
+  background-color: #ffffb0;
+  z-index: 5;
+}
+
+div.cool
+{
+  float: left;
+  position: relative;
+  padding-right: 15px;
+}
+
+.list_table td div.spacer
+{
+  height: 1px;
+}
+
+
+.list_table td.td_left
+{
+  text-align: left;
+}
+
+.list_table td.td_right
+{
+  text-align: right;
+}
+
+.list_table td.td_center
+{
+  text-align: center;
+}
+
+.list_table td.tdimg
+{
+  text-align: left;
+  padding: 1px 4px 1px 4px;
+}
+
+.list_table .alt td
+{
+  background-color: #f0f0f0;
+}
+
+.list_table tbody tr:hover > td
+{
+  background-color: #ffffb0;
+}
+
+.list_table td img
+{
+  margin: 0 5px;
+}
+
+/*---------------------------------------------------------------------*/
+.list_link
+{
+  float: right;
+}
+
+.list_link .first, .list_link .list_link_text
+{
+  border-left: 0;
+}
+
+.list_link .list_link_text
+{
+  color: #b0b0b0;
+  font-weight: normal;
+  width: 50px;
+}
+
+.list_link a
+{
+  font-size: 12px;
+  margin: 0;
+}
+
+.list_link span
+{
+  font-size: 12px;
+  margin: 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+.list_link span, .list_link a
+{
+  padding: 1px;
+  display: block;
+  height: 18px;
+  he\ight: 16px;
+  width: 24px;
+  w\idth: 22px;
+  float: left;
+  text-align: center;
+  border-left: 1px solid #b0b0b0;
+}
+
+.list_link .arrow_h, .list_link .arrow_sh, .list_link .arrow, .list_link .arrow_s
+{
+  width: 18px;
+  w\idth: 16px; 
+}
+
+
+
+/*
+.list_link .arrow_h
+{
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+*/
+.list_link a:hover
+{
+  background-color: #009933;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.list_table .arrow_s
+{
+  border: 0;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  background-position: -102px -3px;
+}
+
+.list_table .arrow_s.down
+{  background-position: -119px -3px;}

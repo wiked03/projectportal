@@ -1,0 +1,65 @@
+/*=========================================================================================== 
+| Style for site-specific colors
+===========================================================================================*/
+
+/*------------------------------------*/
+.cal_header
+{
+  background: #a0a0a0;
+}
+.cal_header a
+{
+  /*color: #971d1f;*/
+  color: #009933;
+}
+.cal_header a:hover
+{
+  color: #ffffff;
+  background: #009933;
+}
+.cal_header .header_date span
+{
+  color: #ffffff;
+}
+.cal_body
+{ 
+  background: #f8f8f8;
+  border: 1px solid #a0a0a0;
+}
+.cal_body th
+{
+  border-bottom: 1px solid #a0a0a0;
+}
+.cal_body th.weekend_label
+{
+  /* background: #e0e0e0;*/
+}
+.cal_body a, .cal_body td span
+{
+  color: #000000;
+}
+
+.cal_body .today a
+{
+  border: 1px solid #ffc140;
+  color: #000000;
+  background: #ffffb0;
+}
+
+.cal_body .selected a
+{
+  border: 1px solid #009933;
+  color: #000000;
+  background: #99FF99; /*#ffe0e0;*/
+}
+
+.cal_body .other_month a, .cal_body td span
+{
+  color: #a0a0a0;
+}
+
+.cal_body a:hover
+{
+  color: #ffffff;
+  background: #009933;
+}

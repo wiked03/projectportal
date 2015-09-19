@@ -1,0 +1,39 @@
+#configure PHP
+AddHandler php5-script .php
+php_flag magic_quotes_gpc Off
+
+# Set session timeout to 2 hours
+php_value session.gc_maxlifetime 7200
+
+#Configure Directory settings
+Options +FollowSymlinks
+Options All -Indexes
+RewriteEngine on
+
+#LOCAL:
+RewriteBase /projectportal/
+#LIVE:
+#RewriteBase /projectportal/
+
+# Assign Error Pages
+ErrorDocument 403 /index.php/error
+ErrorDocument 404 /index.php/error
+
+
+#Redirect people out of core
+RewriteCond %{REQUEST_URI} ^_core.*
+RewriteRule ^(.*)$ home [L,R]
+
+
+# Redirect index.php and blank to home
+RewriteRule ^index\.php$ home [R,L]
+RewriteRule ^/?$ home [R,L]
+
+# Strip query string
+RewriteCond %{QUERY_STRING} .
+RewriteRule ^(.*)$ $1? [L,R]
+
+# Pass everything through index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,NC]
