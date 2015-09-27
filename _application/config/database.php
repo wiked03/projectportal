@@ -16,8 +16,8 @@ $db['test']['host']   = 'localhost';
 
 $db['remote_test']['name']   = 'projectportaldb';
 $db['remote_test']['user']   = 'projectportaldb';
-$db['remote_test']['passwd'] = '';
-$db['remote_test']['host']   = '';
+$db['remote_test']['passwd'] = 'Testtest1!';
+$db['remote_test']['host']   = '68.178.143.77';
 //$db['default']['cookiename']   = 'vop_cookie';
 
 $db['remote']['name']   = '';
