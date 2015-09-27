@@ -9,14 +9,14 @@ $session['name']    = 'crm_session';
 $active_db = 'test';
 
 $db['test']['name']   = 'project_portal_db';
-$db['test']['user']   = 'testuser';
-$db['test']['passwd'] = 'testtest';
+$db['test']['user']   = 'testuser1';
+$db['test']['passwd'] = 'testtest1';
 $db['test']['host']   = 'localhost';
 
 
 $db['remote_test']['name']   = 'projectportaldb';
 $db['remote_test']['user']   = 'projectportaldb';
-$db['remote_test']['passwd'] = 'gn@tsuM1';
+$db['remote_test']['passwd'] = '';
 $db['remote_test']['host']   = '';
 //$db['default']['cookiename']   = 'vop_cookie';
 

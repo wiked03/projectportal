@@ -14,7 +14,7 @@ var system_msg;
 //var PATH_BASE = '/';
 //LIVE
 var PATH_BASE = '/projectportal/';
-var PATH_WEB  = window.location.protocol + '//' + window.location.hostname + PATH_BASE;
+var PATH_WEB  = window.location.protocol + '//' + window.location.host + PATH_BASE;
 var PATH_SELF = window.location.pathname;
 
 // error codes
